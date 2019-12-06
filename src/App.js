@@ -11,7 +11,8 @@ class App extends React.Component {
     super(props);
 
     this.state = {
-      inventory: []
+      inventory: [],
+      selectedProduct: {}
     }
 
     this.getInventory = this.getInventory.bind(this);
@@ -35,9 +36,17 @@ class App extends React.Component {
   render() {
     return (
       <div className="App">
-        <Dashboard inventory={ this.state.inventory } />
-        <Form getInventory={ this.getInventory }/>
-        <Header />     
+        <Header />
+        <div className="container">
+          <Dashboard
+            inventory={ this.state.inventory }
+            getInventory={ this.getInventory }
+          />
+          <Form
+            getInventory={ this.getInventory }
+            selectedProduct={ this.selectedProduct }
+          />
+        </div>
       </div>
     );
   }

@@ -16,5 +16,6 @@ app.use(express.json());
 
 app.get('/api/inventory', controller.getInventory);
 app.post('/api/product', controller.postProduct);
+app.delete('/api/inventory/:id', controller.deleteProduct);
 
 app.listen(PORT, () => console.log(`Server listening on port ${PORT}...`));
